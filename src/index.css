@@ -1,0 +1,135 @@
+body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background-color: #29251F;
+  font-family: Rockwell, Algerian;  
+}
+
+#root, .status-bar, main{
+  min-width: 300px;
+}
+
+#root{
+  width: 80%;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+header{
+  text-align: center;
+}
+
+header h1{
+  font-size: 2rem;
+  font-weight: 500;
+  color: #D6B36A;
+}
+
+header p{
+  color: #F1E5CE;
+}
+
+.status-bar{
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  background-color: #85BB65;
+  width: 50%;     
+  border-radius: 5px;
+  margin-block: 25px;
+  max-width: 700px;
+}
+
+.status-bar h2, .status-bar p{
+  margin: 1%;
+  color: #F1E5CE;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 50%;
+    max-width: 600px;             
+}
+
+.health-bar{  
+  display: flex;
+  flex-direction: column;
+  height: 100%;  
+}
+
+.health-bar span{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picture-container{
+  background-color: #F1E5CE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.picture-container img{
+  max-width: 100%;
+  height: auto;
+}
+
+.word-div{
+  margin-top: 30px;
+  display: flex;
+  gap: 4px;
+}
+
+.word-div span{
+  background-color: #323232;
+  color:#D6B36A ;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  border: none;
+  border-bottom: 1px solid #F1E5CE;  
+}
+
+.keyboard{
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  margin-top: 50px;
+  width: 70%;
+  max-width: 600px;
+  justify-content: center;  
+  
+}
+
+.keyboard button{
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: larger;
+  background-color:#514638;
+  border-color: #D6B36A;
+  color:#F1E5CE;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color:#D6B36A ;
+}
+
+.newgame{
+  margin-top: 40px;
+}
+
+
+
+
