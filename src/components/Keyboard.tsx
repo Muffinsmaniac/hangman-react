@@ -1,8 +1,26 @@
-export default function Keyboard(){
+type KeyboardProps = {
+    keyPressed:(letter:string) => void,
+    guessedLetters:string[],
+    secretWord:string
+}
+
+export default function Keyboard({keyPressed,guessedLetters,secretWord}:KeyboardProps){
     const alphabet:string = "abcdefghijklmnopqrstuvwxyz"
 
+    function getButtonClass(letter:string){
+        if(!guessedLetters.includes(letter)){
+            return ""
+        }        
+        return secretWord.includes(letter) ? "correct-guess" : "wrong-guess"
+    }
+
     const buttonElements = alphabet.split("").map( letter =>
-        <button key={letter}>{letter.toUpperCase()}</button>
+        <button key={letter}
+                onClick={()=>keyPressed(letter)}
+                className={getButtonClass(letter)}
+        >              
+            {letter.toUpperCase()}
+        </button>
     )
 
     return(        

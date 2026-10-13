@@ -118,7 +118,19 @@ main {
   font-size: larger;
   background-color:#514638;
   border-color: #D6B36A;
-  color:#F1E5CE;
+  color:#F1E5CE;  
+}
+
+.keyboard .wrong-guess{
+  background-color: #822F2B;
+}
+
+.keyboard .correct-guess{
+  background-color: #85BB65;
+}
+
+.keyboard button, .newgame{
+  font-family: Rockwell, Algerian;
 }
 
 button:hover{
@@ -128,6 +140,12 @@ button:hover{
 
 .newgame{
   margin-top: 40px;
+  font-size: larger;
+  width: 30%;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #5B7890;
+  border-color: #D6B36A;
 }
 
 
