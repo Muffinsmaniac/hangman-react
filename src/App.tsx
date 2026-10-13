@@ -8,11 +8,16 @@ function App() {
   //Variables
   const [currentWord, setCurrentWord] = useState<string>("react")
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
-  console.log(guessedLetters)
 
+  const wrongGuessesCount:number = //Deriving the amount of wrong guesses!
+    guessedLetters.filter( letter => !currentWord.includes(letter)).length
+  
+  
   //Elements 
   const letterElements = currentWord.split("").map( (letter,index) =>
-    <span key={index}>{letter.toUpperCase()}</span>
+    <span key={index}>
+      {guessedLetters.includes(letter) && letter.toUpperCase()}
+    </span>
   )
   
   //Functions
@@ -26,7 +31,8 @@ function App() {
     <>
       <Header/>
       <Status/>
-      <Hangman/>
+      <Hangman 
+        wrongGuessesCount={wrongGuessesCount}/>
       <div className="word-div">
         {letterElements}
       </div>

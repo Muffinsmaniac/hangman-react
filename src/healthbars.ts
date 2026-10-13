@@ -1,42 +1,34 @@
 export const healthbars = [
     {
-        name: "Doin' fine!",
-        backgroundColor: "#85BB65",
+        name: "Doin' fine!",        
+        id: 0,
+    },
+    {
+        name: "Less fine?",        
         id: 1,
     },
     {
-        name: "Less fine?",
-        backgroundColor: "#A0B65B",
+        name: "Uhm...",        
         id: 2,
     },
     {
-        name: "Uhm...",
-        backgroundColor: "#B9B052",
+        name: "Partner?",        
         id: 3,
     },
     {
-        name: "Partner?",
-        backgroundColor: "#C9A04F",
+        name: "Oj",        
         id: 4,
     },
     {
-        name: "Oj",
-        backgroundColor: "#C88745",
+        name: "Nejnej",        
         id: 5,
     },
     {
-        name: "Nejnej",
-        backgroundColor: "#B9683F",
+        name: "Muchacho",        
         id: 6,
     },
     {
-        name: "Muchacho",
-        backgroundColor: "#A84937",
+        name: "Death",        
         id: 7,
-    },
-    {
-        name: "Death",
-        backgroundColor: "#822F2B",
-        id: 8,
     },
 ]
