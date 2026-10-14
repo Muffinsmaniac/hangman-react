@@ -1,10 +1,11 @@
 type KeyboardProps = {
     keyPressed:(letter:string) => void,
     guessedLetters:string[],
-    secretWord:string
+    secretWord:string,
+    isGameOver:boolean
 }
 
-export default function Keyboard({keyPressed,guessedLetters,secretWord}:KeyboardProps){
+export default function Keyboard({keyPressed,guessedLetters,secretWord, isGameOver}:KeyboardProps){
     const alphabet:string = "abcdefghijklmnopqrstuvwxyz"
 
     function getButtonClass(letter:string){
@@ -17,7 +18,8 @@ export default function Keyboard({keyPressed,guessedLetters,secretWord}:Keyboard
     const buttonElements = alphabet.split("").map( letter =>
         <button key={letter}
                 onClick={()=>keyPressed(letter)}
-                className={getButtonClass(letter)}
+                className={getButtonClass(letter)}    
+                disabled={isGameOver}
         >              
             {letter.toUpperCase()}
         </button>
