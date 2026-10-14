@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { healthbars } from "./healthbars"
 import Header from './components/Header'
 import Status from './components/Status'
 import Hangman from './components/Hangman'
@@ -7,11 +8,15 @@ import Keyboard from './components/Keyboard'
 function App() {
   //Variables
   const [currentWord, setCurrentWord] = useState<string>("react")
-  const [guessedLetters, setGuessedLetters] = useState<string[]>([])
+  const [guessedLetters, setGuessedLetters] = useState<string[]>([]) 
 
   const wrongGuessesCount:number = //Deriving the amount of wrong guesses!
     guessedLetters.filter( letter => !currentWord.includes(letter)).length
-  
+
+  const isGameLost:boolean = wrongGuessesCount >= healthbars.length -1
+  const isGameWon:boolean = 
+    currentWord.split("").every(letter => guessedLetters.includes(letter))
+  const isGameOver:boolean = isGameLost || isGameWon
   
   //Elements 
   const letterElements = currentWord.split("").map( (letter,index) =>
@@ -30,7 +35,10 @@ function App() {
   return (
     <>
       <Header/>
-      <Status/>
+      <Status
+        isGameLost={isGameLost}
+        isGameWon={isGameWon}
+        />
       <Hangman 
         wrongGuessesCount={wrongGuessesCount}/>
       <div className="word-div">
@@ -41,7 +49,7 @@ function App() {
         guessedLetters={guessedLetters}
         secretWord={currentWord}
        />
-      <button className='newgame'>New Game</button>
+      {isGameOver && <button className='newgame'>New Game</button>}
     </>
   )
 }
