@@ -4,11 +4,11 @@ export const healthbars = [
         id: 0,
     },
     {
-        name: "Less fine?",        
+        name: "Bit of trouble..",        
         id: 1,
     },
     {
-        name: "Uhm...",        
+        name: "Uh oh, Partner",        
         id: 2,
     },
     {
@@ -16,15 +16,15 @@ export const healthbars = [
         id: 3,
     },
     {
-        name: "Oj",        
+        name: "Ain't good",        
         id: 4,
     },
     {
-        name: "Nejnej",        
+        name: "Have mercy",        
         id: 5,
     },
     {
-        name: "Muchacho",        
+        name: "Heap o' trouble",        
         id: 6,
     },
     {
